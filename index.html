@@ -2,49 +2,49 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Klarifikasi Lingkungan Berbasis AI</title>
+    <title>Dampak Kerusakan Lingkungan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- LOGIN -->
-<div id="loginPage" class="login-container">
+<div id="loginPage" class="login">
     <h2>🌱 Login Pengguna</h2>
     <input type="text" id="username" placeholder="Masukkan Nama">
     <button onclick="login()">Login</button>
 </div>
 
 <!-- WEBSITE -->
-<div id="mainPage" class="hidden">
+<div id="website" class="hidden">
 
 <header>
-    <h1>🌈 Klarifikasi Lingkungan Berbasis AI & Edukasi Sosial</h1>
+    <h1>🌈 Dampak Kerusakan Lingkungan & Cara Penanganan</h1>
     <p>Halo, <b><span id="userDisplay"></span></b></p>
     <button onclick="logout()">Logout</button>
 </header>
 
 <section>
-    <h2>📝 Artikel Singkat Lingkungan</h2>
+    <h2>📝 Artikel Singkat Dampak Lingkungan</h2>
     <input type="text" id="judulArtikel" placeholder="Judul Artikel">
     <textarea id="isiArtikel" placeholder="Tulis artikel singkat..."></textarea>
     <input type="file" id="gambarArtikel" accept="image/*">
-    <button onclick="tambahArtikel()">Publikasikan</button>
+    <button onclick="tambahArtikel()">Tambahkan Artikel</button>
     <div id="artikelOutput"></div>
 </section>
 
 <section>
-    <h2>📷 Unggah Ilustrasi Lingkungan</h2>
+    <h2>🎨 Ilustrasi Kerusakan Lingkungan</h2>
     <input type="file" id="ilustrasi" accept="image/*" onchange="previewIlustrasi()">
     <div id="previewIlustrasi"></div>
 </section>
 
 <section>
-    <h2>🚨 Form Laporan Masalah Lingkungan</h2>
+    <h2>🚨 Form Laporan Kerusakan Lingkungan</h2>
     <input type="text" id="lokasi" placeholder="Lokasi Kejadian">
     <select id="jenisMasalah">
+        <option>Sampah</option>
         <option>Pencemaran Air</option>
         <option>Pencemaran Udara</option>
-        <option>Sampah</option>
         <option>Deforestasi</option>
         <option>Lainnya</option>
     </select>
@@ -54,9 +54,33 @@
 </section>
 
 <section>
+    <h2>🛠️ Cara Penanganan</h2>
+    <p>Beberapa cara penanganan kerusakan lingkungan:</p>
+    <ul>
+        <li>Pengelolaan sampah yang baik</li>
+        <li>Reboisasi dan penghijauan</li>
+        <li>Edukasi masyarakat</li>
+        <li>Pengurangan penggunaan plastik</li>
+    </ul>
+</section>
+
+<section>
+    <h2>🌱 Manfaat Penanganan Lingkungan</h2>
+    <p>Manfaat yang diperoleh jika lingkungan terjaga:</p>
+    <ul>
+        <li>Kesehatan masyarakat meningkat</li>
+        <li>Lingkungan lebih bersih</li>
+        <li>Mencegah bencana alam</li>
+        <li>Masa depan berkelanjutan</li>
+    </ul>
+    <input type="file" accept="image/*" onchange="previewManfaat(event)">
+    <div id="previewManfaat"></div>
+</section>
+
+<section>
     <h2>📢 Call To Action</h2>
-    <p>🌍 Ayo bersama menjaga lingkungan! Laporkan masalah, edukasi sesama, dan berkolaborasi untuk masa depan yang lebih hijau.</p>
-    <button onclick="aksi()">Ikut Aksi Sekarang</button>
+    <p>Mari bersama menjaga bumi demi generasi mendatang.</p>
+    <button onclick="aksi()">Ikut Aksi Peduli Lingkungan</button>
     <p id="aksiOutput"></p>
 </section>
 
@@ -64,14 +88,23 @@
     <h2>⚠️ Tantangan yang Dihadapi</h2>
     <ul>
         <li>Kurangnya kesadaran masyarakat</li>
-        <li>Hoaks informasi lingkungan</li>
-        <li>Keterbatasan data lapangan</li>
-        <li>Minimnya kolaborasi</li>
+        <li>Pencemaran yang terus meningkat</li>
+        <li>Minimnya penegakan hukum</li>
+        <li>Kurangnya kolaborasi</li>
     </ul>
 </section>
 
+<section>
+    <h2>📌 Kesimpulan</h2>
+    <p>
+        Kerusakan lingkungan memberikan dampak besar bagi kehidupan manusia.
+        Dengan kesadaran, edukasi, dan tindakan bersama, lingkungan dapat dijaga
+        dan dilestarikan untuk masa depan yang lebih baik.
+    </p>
+</section>
+
 <footer>
-    <p>© 2025 Klarifikasi Lingkungan Berbasis AI</p>
+    <p>© 2025 Website Edukasi Lingkungan</p>
 </footer>
 
 </div>
