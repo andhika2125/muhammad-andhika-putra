@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.7);
+}
+
+nav a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+}
+
+section {
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0,0,0,0.8);
+}
+
+.login-container {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.login-container input {
+    padding: 10px;
+    width: 200px;
+}
+
+.login-container button {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
