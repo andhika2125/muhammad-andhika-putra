@@ -1,36 +1,84 @@
 function login() {
     const username = document.getElementById("username").value;
     if (username === "") {
-        alert("Nama tidak boleh kosong!");
+        alert("Nama wajib diisi!");
         return;
     }
     localStorage.setItem("username", username);
-    showWebsite();
+    tampilkanWebsite();
 }
 
 function logout() {
-    localStorage.removeItem("username");
+    localStorage.clear();
     location.reload();
 }
 
-function showWebsite() {
+function tampilkanWebsite() {
     const user = localStorage.getItem("username");
     if (user) {
         document.getElementById("loginPage").classList.add("hidden");
-        document.getElementById("website").classList.remove("hidden");
+        document.getElementById("mainPage").classList.remove("hidden");
         document.getElementById("userDisplay").innerText = user;
     }
 }
 
-function analisisAI() {
-    const hasil = [
-        "Isu lingkungan terklasifikasi sebagai risiko tinggi.",
-        "Data menunjukkan peningkatan pencemaran.",
-        "Rekomendasi AI: Edukasi masyarakat dan aksi kolaboratif.",
-        "AI mendeteksi potensi solusi berbasis komunitas."
-    ];
-    const random = hasil[Math.floor(Math.random() * hasil.length)];
-    document.getElementById("hasilAI").innerText = random;
+function tambahArtikel() {
+    const judul = document.getElementById("judulArtikel").value;
+    const isi = document.getElementById("isiArtikel").value;
+    const gambar = document.getElementById("gambarArtikel").files[0];
+
+    if (!judul || !isi || !gambar) {
+        alert("Lengkapi artikel!");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function () {
+        document.getElementById("artikelOutput").innerHTML += `
+            <h3>${judul}</h3>
+            <p>${isi}</p>
+            <img src="${reader.result}">
+            <hr>
+        `;
+    };
+    reader.readAsDataURL(gambar);
 }
 
-window.onload = showWebsite;
+function previewIlustrasi() {
+    const file = document.getElementById("ilustrasi").files[0];
+    const reader = new FileReader();
+    reader.onload = function () {
+        document.getElementById("previewIlustrasi").innerHTML =
+            `<img src="${reader.result}">`;
+    };
+    reader.readAsDataURL(file);
+}
+
+function kirimLaporan() {
+    const lokasi = document.getElementById("lokasi").value;
+    const jenis = document.getElementById("jenisMasalah").value;
+    const foto = document.getElementById("fotoMasalah").files[0];
+
+    if (!lokasi || !foto) {
+        alert("Lengkapi laporan!");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function () {
+        document.getElementById("laporanOutput").innerHTML += `
+            <p><b>Lokasi:</b> ${lokasi}</p>
+            <p><b>Masalah:</b> ${jenis}</p>
+            <img src="${reader.result}">
+            <hr>
+        `;
+    };
+    reader.readAsDataURL(foto);
+}
+
+function aksi() {
+    document.getElementById("aksiOutput").innerText =
+        "✅ Terima kasih telah berpartisipasi menjaga lingkungan!";
+}
+
+window.onload = tampilkanWebsite;
