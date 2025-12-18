@@ -1,7 +1,7 @@
 function login() {
     const username = document.getElementById("username").value;
     if (username === "") {
-        alert("Nama wajib diisi!");
+        alert("Nama harus diisi!");
         return;
     }
     localStorage.setItem("username", username);
@@ -17,7 +17,7 @@ function tampilkanWebsite() {
     const user = localStorage.getItem("username");
     if (user) {
         document.getElementById("loginPage").classList.add("hidden");
-        document.getElementById("mainPage").classList.remove("hidden");
+        document.getElementById("website").classList.remove("hidden");
         document.getElementById("userDisplay").innerText = user;
     }
 }
@@ -47,7 +47,7 @@ function tambahArtikel() {
 function previewIlustrasi() {
     const file = document.getElementById("ilustrasi").files[0];
     const reader = new FileReader();
-    reader.onload = function () {
+    reader.onload = () => {
         document.getElementById("previewIlustrasi").innerHTML =
             `<img src="${reader.result}">`;
     };
@@ -65,7 +65,7 @@ function kirimLaporan() {
     }
 
     const reader = new FileReader();
-    reader.onload = function () {
+    reader.onload = () => {
         document.getElementById("laporanOutput").innerHTML += `
             <p><b>Lokasi:</b> ${lokasi}</p>
             <p><b>Masalah:</b> ${jenis}</p>
@@ -76,9 +76,18 @@ function kirimLaporan() {
     reader.readAsDataURL(foto);
 }
 
+function previewManfaat(event) {
+    const reader = new FileReader();
+    reader.onload = () => {
+        document.getElementById("previewManfaat").innerHTML =
+            `<img src="${reader.result}">`;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
+
 function aksi() {
     document.getElementById("aksiOutput").innerText =
-        "✅ Terima kasih telah berpartisipasi menjaga lingkungan!";
+        "✅ Terima kasih telah ikut menjaga lingkungan!";
 }
 
 window.onload = tampilkanWebsite;
